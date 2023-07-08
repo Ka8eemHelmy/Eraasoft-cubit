@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:lottie/lottie.dart';
 import 'package:start_flutter/view/screens/add_number/add_number.dart';
 import 'package:start_flutter/view_model/bloc/login/login_cubit.dart';
@@ -25,32 +26,32 @@ class LoginScreen extends StatelessWidget {
                   child: Column(
                     children: [
                       SizedBox(
-                        height: 150,
+                        height: 150.h,
                       ),
                       Image.network(
                         'https://eraasoft.com/front/logo1.png',
                         fit: BoxFit.fitHeight,
-                        height: 70,
+                        height: 70.h,
                       ),
                       SizedBox(
-                        height: 50,
+                        height: 50.h,
                       ),
                       Lottie.asset(
                         'assets/lottie/reading-book.json',
-                        height: 200,
+                        height: 200.h,
                       ),
                       SizedBox(
-                        height: 50,
+                        height: 50.h,
                       ),
                       Text(
                         'Login Now ...',
                         style: TextStyle(
-                          fontSize: 24,
+                          fontSize: 24.sp,
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 30.h,
                       ),
                       TextFormField(
                         onTap: () {
@@ -64,8 +65,8 @@ class LoginScreen extends StatelessWidget {
                         decoration: InputDecoration(
                           // label: Text('Email'),
                           hintText: 'Email',
-                          hintStyle: TextStyle(color: Colors.red),
-                          prefixIcon: Icon(
+                          hintStyle: const TextStyle(color: Colors.red),
+                          prefixIcon: const Icon(
                             Icons.person,
                           ),
                           enabledBorder: OutlineInputBorder(
@@ -76,21 +77,21 @@ class LoginScreen extends StatelessWidget {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.greenAccent,
                               width: 4,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                               width: 2,
                             ),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                               width: 4,
                             ),
@@ -107,7 +108,7 @@ class LoginScreen extends StatelessWidget {
                         // autovalidateMode: AutovalidateMode.onUserInteraction,
                       ),
                       SizedBox(
-                        height: 20,
+                        height: 20.h,
                       ),
                       TextFormField(
                         onTap: () {
@@ -122,7 +123,7 @@ class LoginScreen extends StatelessWidget {
                         keyboardType: TextInputType.text,
                         decoration: InputDecoration(
                           hintText: 'Password',
-                          prefixIcon: Icon(
+                          prefixIcon: const Icon(
                             Icons.password_rounded,
                           ),
                           suffixIcon: IconButton(
@@ -141,21 +142,21 @@ class LoginScreen extends StatelessWidget {
                           ),
                           focusedBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.greenAccent,
                               width: 4,
                             ),
                           ),
                           errorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                               width: 2,
                             ),
                           ),
                           focusedErrorBorder: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(12),
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Colors.red,
                               width: 4,
                             ),
@@ -173,7 +174,7 @@ class LoginScreen extends StatelessWidget {
                         // autovalidateMode: AutovalidateMode.onUserInteraction,
                       ),
                       SizedBox(
-                        height: 30,
+                        height: 30.h,
                       ),
                       SizedBox(
                         width: double.infinity,
@@ -181,11 +182,11 @@ class LoginScreen extends StatelessWidget {
                         child: ElevatedButton(
                           onPressed: () {
                             if (cubit.formKey.currentState!.validate()) {
-                              Navigation.push(context, AddNumber());
+                              Navigation.push(context, const AddNumber());
                               // Navigation.pushReplacement(context, AddScreen());
                             }
                           },
-                          child: Text(
+                          child: const Text(
                             'Login',
                           ),
                         ),
